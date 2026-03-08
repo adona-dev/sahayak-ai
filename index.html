@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sahayak AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Sahayak AI</h1>
+<p class="tagline">Your AI assistant for government forms</p>
+
+<div class="main-container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+
+        <div class="card">
+            <h2>Assistant</h2>
+
+            <div class="language-buttons">
+                <button onclick="setLanguage('english')">English</button>
+                <button onclick="setLanguage('hindi')">Hindi</button>
+                <button onclick="setLanguage('malayalam')">Malayalam</button>
+            </div>
+
+            <div id="chatbox" class="chatbox">
+                <p><b>AI:</b> Hello! I will help you fill your application.</p>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Type your answer">
+                <button onclick="sendMessage()">Send</button>
+                <button onclick="startVoice()">🎤</button>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <h2>Form Preview</h2>
+
+            <div id="formPreview">
+                No data yet
+            </div>
+
+            <button onclick="submitForm()" class="submit-btn">
+                Submit Application
+            </button>
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+
+        <div class="card">
+            <h2>Upload Aadhaar Card</h2>
+
+            <input type="file" id="aadhaarUpload">
+
+            <button onclick="extractAadhaar()" class="extract-btn">
+                Extract Details
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
